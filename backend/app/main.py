@@ -12,11 +12,16 @@ from app.routers.decode import router as decode_router
 from app.routers.encode import router as encode_router
 
 
+import os
+
 app = FastAPI(title="StegLab API", version="1.0.0")
+
+# Support multiple origins from an environment variable for deployment
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
