@@ -1,4 +1,4 @@
-# StegLab (Full-Stack Steganography App)
+# StegoVault (Full-Stack Steganography App)
 
 Features:
 - Encoder
