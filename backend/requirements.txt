@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pillow
+numpy
+scipy
+pydub
+cryptography
+python-multipart
+sqlalchemy
+aiofiles
+pytest
+audioop-lts
