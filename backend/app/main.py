@@ -17,7 +17,9 @@ import os
 app = FastAPI(title="StegLab API", version="1.0.0")
 
 # Support multiple origins from an environment variable for deployment
-allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+# Set ALLOWED_ORIGINS to '*' for unrestricted access during testing
+raw_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173")
+allowed_origins = [o.strip() for o in raw_origins.split(",") if o.strip()]
 
 app.add_middleware(
     CORSMiddleware,
