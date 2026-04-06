@@ -9,4 +9,4 @@ python-multipart
 sqlalchemy
 aiofiles
 pytest
-audioop-lts
+audioop-lts; python_version >= '3.13'
